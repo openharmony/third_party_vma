@@ -1,0 +1,38 @@
+# Copyright (c) 2023 Huawei Device Co., Ltd. All rights reserved.
+
+import("//build/config/config.gni")
+import("//build/ohos.gni")
+
+config("vma_config") {
+  cflags = [
+    "-w",
+  ]
+  defines = [
+    "VMA_STATIC_VULKAN_FUNCTIONS=0",
+    "VMA_STATS_STRING_ENABLED=0"
+  ]
+}
+
+config("vma_public_config") {
+  include_dirs = [
+    "include",
+  ]
+}
+
+ohos_shared_library("vma") {
+  sources = [
+    "oh_src/vma_impl.cpp",
+  ]
+
+  configs = [ ":vma_config" ]
+  public_configs = [ ":vma_public_config" ]
+
+  external_deps = [
+    "vulkan-headers:vulkan_headers",
+  ]
+
+  public = [ "include/vk_mem_alloc.h" ]
+
+  part_name = "vma"
+  subsystem_name = "thirdparty"
+}
