@@ -1,0 +1,44 @@
+{
+    "name": "@ohos/vma",
+    "description": "Vulkan Memory Allocator is a single-header C++ library for memory allocation in Vulkan",
+    "version": "3.0.1",
+    "license": "MIT",
+    "publishAs": "code-segment",
+    "segment": {
+        "destPath": "third_party/vma"
+    },
+    "dirs": {},
+    "scripts": {},
+    "readmePath": {
+        "en": "README.md"
+    },
+    "component": {
+        "name": "vma",
+        "subsystem": "thirdparty",
+        "syscap": [],
+        "features": [],
+        "adapted_system_type": ["standard"],
+        "rom": "89KB",
+        "ram": "720KB",
+        "deps": {
+            "components": [ "vulkan-headers" ],
+            "third_party": []
+        },
+        "build": {
+            "sub_component": [
+                "//third_party/vma:vma"
+            ],
+            "inner_kits": [
+                {
+                    "type": "so",
+                    "name": "//third_party/vma:vma",
+                    "header": {
+                        "header_files": [],
+                        "header_base": "//third_party/vma/include"
+                    }
+                }
+            ],
+            "test": []
+        }
+    }
+}

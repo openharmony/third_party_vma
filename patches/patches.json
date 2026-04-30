@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "project":"vendor_hihope",
+            "path":"vendor/hihope",
+            "pr_url":"https://gitcode.com/openharmony/vendor_hihope/pull/1645"
+        },
+        {
+            "project":"productdefine_common",
+            "path":"productdefine/common",
+            "pr_url":"https://gitcode.com/openharmony/productdefine_common/pull/1112"
+        }
+    ]
+}
