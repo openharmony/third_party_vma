@@ -17,7 +17,7 @@
         "subsystem": "thirdparty",
         "syscap": [],
         "features": [],
-        "adapted_system_type": ["standard"],
+        "adapted_system_type": [ "mini,small,standard" ],
         "rom": "89KB",
         "ram": "720KB",
         "deps": {
@@ -26,12 +26,21 @@
         },
         "build": {
             "sub_component": [
-                "//third_party/vma:vma"
+                "//third_party/vma:vma",
+                "//third_party/vma:vma_static"
             ],
             "inner_kits": [
                 {
                     "type": "so",
                     "name": "//third_party/vma:vma",
+                    "header": {
+                        "header_files": [],
+                        "header_base": "//third_party/vma/include"
+                    }
+                },
+                {
+                    "type": "a",
+                    "name": "//third_party/vma:vma_static",
                     "header": {
                         "header_files": [],
                         "header_base": "//third_party/vma/include"
