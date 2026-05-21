@@ -36,3 +36,25 @@ ohos_shared_library("vma") {
   part_name = "vma"
   subsystem_name = "thirdparty"
 }
+
+ohos_static_library("vma_static") {
+  sources = [
+    "oh_src/vma_impl.cpp",
+  ]
+
+  configs = [ ":vma_config" ]
+  public_configs = [ ":vma_public_config" ]
+
+  include_dirs = [ "//third_party/skia/m133/include/third_party/vulkan" ]
+
+  external_deps = [
+    "vulkan-headers:vulkan_headers",
+  ]
+
+  public = [ "include/vk_mem_alloc.h" ]
+
+  output_name = "vma_static"
+
+  part_name = "vma"
+  subsystem_name = "thirdparty"
+}
