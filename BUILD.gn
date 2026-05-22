@@ -45,9 +45,11 @@ ohos_static_library("vma_static") {
   configs = [ ":vma_config" ]
   public_configs = [ ":vma_public_config" ]
 
-  external_deps = [
-    "vulkan-headers:vulkan_headers",
-  ]
+  if (!is_arkui_x) {
+    external_deps = [ "vulkan-headers:vulkan_headers" ]
+  } else {
+    deps = [ "//third_party/vulkan-headers:vulkan_headers" ]
+  }
 
   public = [ "include/vk_mem_alloc.h" ]
 
