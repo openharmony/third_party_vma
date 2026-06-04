@@ -1,9 +1,9 @@
 [
     {
-        "Name": "openEuler:vulkanmemoryallocator",
+        "Name": "Vulkan Memory Allocator",
         "License": "MIT",
         "License File": "LICENSE.txt",
-        "Version Number": "3.0.1",
+        "Version Number": "a6bfc237255a6bac1513f7c1ebde6d8aed6b5191",
         "Owner": "lvang3@huawei.com",
         "Upstream URL": "https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator",
         "Description": "Easy to integrate Vulkan memory allocation library. Provides higher-level functions to help game developers manage Vulkan memory allocations and resource creation."
