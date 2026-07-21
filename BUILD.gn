@@ -20,6 +20,7 @@ config("vma_public_config") {
 }
 
 ohos_shared_library("vma") {
+  branch_protector_ret = "pac_ret"
   sources = [
     "oh_src/vma_impl.cpp",
   ]
@@ -38,6 +39,7 @@ ohos_shared_library("vma") {
 }
 
 ohos_static_library("vma_static") {
+  branch_protector_ret = "pac_ret"
   sources = [
     "oh_src/vma_impl.cpp",
   ]
