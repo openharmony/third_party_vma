@@ -11,6 +11,9 @@ config("vma_config") {
     "VMA_STATIC_VULKAN_FUNCTIONS=0",
     "VMA_STATS_STRING_ENABLED=0"
   ]
+  if (is_emulator) {
+    defines += [ "VMA_MAPPING_HYSTERESIS_ENABLED=0" ]
+  }
 }
 
 config("vma_public_config") {
